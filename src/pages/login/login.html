@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Iniciar Sesion</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label floating>Usuario</ion-label>
+    <ion-input name="usr" type="text" [(ngModel)]="user"></ion-input>
+  </ion-item>
+
+  <ion-item margin-bottom>
+    <ion-label floating>Password</ion-label>
+    <ion-input name="pass" type="password" [(ngModel)]="pass"></ion-input>
+  </ion-item>
+
+  <buttton ion-button block full margin-top (click)="login()">Entrar</buttton>
+
+
+
+</ion-content>
