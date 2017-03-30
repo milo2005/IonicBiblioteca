@@ -8,6 +8,8 @@ import { AddLibroPage } from '../pages/add-libro/add-libro';
 
 import { LibroService } from '../providers/libro-service';
 
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 @NgModule({
   declarations: [
