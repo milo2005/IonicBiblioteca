@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Libro } from '../../models/libro';
+import { LibroService } from '../../providers/libro-service';
 
 @Component({
   selector: 'page-add-libro',
@@ -8,16 +9,20 @@ import { Libro } from '../../models/libro';
 })
 export class AddLibroPage {
 
-  libro:Libro;
+  libro: Libro;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController
+    , public navParams: NavParams
+    , public service: LibroService) {
 
-    this.libro =  new Libro();
+    this.libro = new Libro();
 
   }
 
-  save(){
-    
+  save() {
+    this.service.add(this.libro).subscribe(res=>{
+      this.navCtrl.pop();
+    });
   }
 
 }
